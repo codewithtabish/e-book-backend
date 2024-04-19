@@ -1,21 +1,11 @@
-const http = require('http');
+import app from './src/app';
 
-http
-  .createServer((req: any, res: any) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-  })
-  .listen(1337, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:1337/');
+const startServer = () => {
+  const PORT = process.env.PORT || 9000;
 
-console.log('This is data ');
+  app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
+  });
+};
 
-function add() {
-  console.log('yrd');
-
-  console.log('yes');
-
-  console.log('Nothing');
-
-  console.log('nnnnnnnnnnnnnnnnnn');
-}
+startServer();
