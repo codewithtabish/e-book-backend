@@ -12,7 +12,30 @@ app.use(
     origin: config.Frontend_Domain,
   }),
 );
+
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  return res.status(200).json({
+    users: [
+      {
+        id: 1,
+        name: 'John',
+        age: 25,
+      },
+      {
+        id: 2,
+        name: 'Alice',
+        age: 30,
+      },
+      {
+        id: 3,
+        name: 'Bob',
+        age: 28,
+      },
+    ],
+  });
+});
 
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/book', bookRouter);
