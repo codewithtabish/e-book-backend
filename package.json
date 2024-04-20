@@ -2,10 +2,10 @@
   "name": "nexgennode",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.ts"
+    "start": "nodemon index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +28,7 @@
   "dependencies": {
     "@types/cors": "^2.8.17",
     "@types/jsonwebtoken": "^9.0.6",
+    "@vercel/node": "^3.0.27",
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.1.0",
     "cors": "^2.8.5",
