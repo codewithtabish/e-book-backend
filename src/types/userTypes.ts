@@ -3,6 +3,11 @@ interface UserSchemaTypes {
   email: String;
   password: String;
   comparePassword: (password: string) => Promise<boolean>;
+  books: [
+    {
+      type: string;
+    },
+  ];
 }
 
 export { UserSchemaTypes };

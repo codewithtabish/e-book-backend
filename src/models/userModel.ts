@@ -18,6 +18,12 @@ const UserSchema = new mongoose.Schema<UserSchemaTypes>(
       type: String,
       required: true,
     },
+    books: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Book',
+      },
+    ],
   },
   { timestamps: true },
 );

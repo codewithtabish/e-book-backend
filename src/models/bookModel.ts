@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { BookSchemaTypes } from '../types/bookTypes';
 
-const bookModel = new mongoose.Schema<BookSchemaTypes>(
+const BookSchema = new mongoose.Schema<BookSchemaTypes>(
   {
     title: {
       type: String,
@@ -13,6 +13,7 @@ const bookModel = new mongoose.Schema<BookSchemaTypes>(
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: true,
     },
     file: {
@@ -28,3 +29,7 @@ const bookModel = new mongoose.Schema<BookSchemaTypes>(
     timestamps: true,
   },
 );
+
+const BookModel = mongoose.model<BookSchemaTypes>('Book', BookSchema);
+
+export default BookModel;
