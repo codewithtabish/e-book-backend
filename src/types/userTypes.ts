@@ -1,7 +1,7 @@
 interface UserSchemaTypes {
-  name: String;
-  email: String;
-  password: String;
+  name: string;
+  email: string;
+  password: string;
   comparePassword: (password: string) => Promise<boolean>;
   books: [
     {

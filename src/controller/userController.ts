@@ -23,7 +23,6 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     return res.status(201).json({
       message: 'User created successfully',
       token,
-      user: lastUser,
     });
   } catch (error) {
     return next(error);
@@ -51,7 +50,6 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
     return res.status(200).json({
       message: 'Login successful',
       token,
-      user,
     });
   } catch (error: HttpError | any) {
     return next(createHttpError(500, 'server error'));
